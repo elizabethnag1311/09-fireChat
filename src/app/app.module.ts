@@ -5,10 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FormsModule } from '@angular/forms';
 //import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ChatComponent } from './components/chat/chat.component';
+
+import { ChatService } from "./services/chat.service";
 
 @NgModule({
   declarations: [
@@ -20,9 +23,10 @@ import { ChatComponent } from './components/chat/chat.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirestore(() => getFirestore()),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ ChatService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

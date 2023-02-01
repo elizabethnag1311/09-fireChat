@@ -1,3 +1,7 @@
+.font{
+  font-family: Geneva;
+  color: black;
+}
 
 .main-container{
   margin-top: 40px;
@@ -14,15 +18,38 @@
   width: 300px;
   height: 400px;
   overflow: hidden;
-  border: 1px solid #4080FF;
+  border: 1px solid #1a094a;
   border-radius: 20px;
+  background-color: #84cdbf;
 }
 
 .app-mensajes{
-  overflow-y:scroll;
+  overflow-y:auto;
   height:270px;
-  /*background:gray;*/
+  background:rgb(255, 255, 255);
   padding: 5px;
+} 
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 

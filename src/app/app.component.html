@@ -1,7 +1,6 @@
-<ul>
-  <li class="text" *ngFor="let chat of chats | async">
-    {{ chat.mensaje }}
-  </li>
-</ul>
-
-<app-chat></app-chat>
+<div class="container mt-5">
+  <h1 class="font">FireChat</h1>
+  <div class="chat-window">
+    <app-chat></app-chat>
+  </div>
+</div>

@@ -2,11 +2,14 @@
 <hr>
 <div class="app-mensajes" id="app-mensajes">
 
-  <div class="text-end" *ngFor="let chat of _cS.chats">
-    <span class="badge rounded-pill text-bg-info">Elizabeth</span>
-    <p>
-      {{chat.mensaje}}
-    </p>
+  <div *ngFor="let chat of _cS.chats"
+       [ngClass]="{ 'text-end': _cS.usuario.uid == chat.uid}" >
+    <span class="badge rounded-pill" 
+       [ngClass]="{'text-bg-info': _cS.usuario.uid == chat.uid,
+                   'text-bg-success': _cS.usuario.uid != chat.uid}">{{chat.nombre}}</span>
+      <p>
+        {{chat.mensaje}}
+      </p>
   </div>
   </div>
 

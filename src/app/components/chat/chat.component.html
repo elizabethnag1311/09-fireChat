@@ -1,23 +1,35 @@
 <h2 class="font"><i class="fa-regular fa-comments" ></i>  Chats</h2>
 <hr>
 <div class="app-mensajes" id="app-mensajes">
-  <div class="text-end">
+
+  <div class="text-end" *ngFor="let chat of _cS.chats">
+    <span class="badge rounded-pill text-bg-info">Elizabeth</span>
+    <p>
+      {{chat.mensaje}}
+    </p>
+  </div>
+  </div>
+
+  <input type="text"
+       class="form-control"
+       name="mensaje"
+       placeholder="Enviar mensaje"
+       [(ngModel)]="mensaje"
+       (keyup.enter)="enviar_mensaje()">
+
+  <!-- <div class="text-end">
     <span class="badge rounded-pill text-bg-info">Elizabeth</span>
     <p>
       Este es un mensaje de chat
     </p>
   </div>
+
   <div>
     <span class="badge rounded-pill text-bg-success">Flor</span>
     <p>
       Saludos!
     </p>
   </div>
-</div>
+</div> -->
 
-<input type="text"
-       class="form-control"
-       name="mensaje"
-       placeholder="Enviar mensaje"
-       [(ngModel)]="mensaje"
-       (keyup.enter)="enviar_mensaje()">
+

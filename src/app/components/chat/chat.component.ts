@@ -22,6 +22,13 @@ export class ChatComponent implements OnInit {
 
   enviar_mensaje(){
     console.log(this.mensaje);
+
+    if (this.mensaje.length === 0) {
+      return
+    }
+    this._cS.agregarMensaje( this.mensaje )
+            .then( () => this.mensaje = '')
+            .catch( (err) => console.error('Error al enviar mensaje', err))
   }
 
 }
